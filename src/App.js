@@ -27,6 +27,10 @@ function App() {
   }
 
   const videoSelectHandler = selectedVideo => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
     setSelectedVideo(selectedVideo);
   }
 
@@ -40,26 +44,32 @@ function App() {
   }, []);
 
   return (
+    // TODO: logic for loading
     <>
-      <SearchBar 
-        onSearch={onSearchHandler}
-      />
+      <div className="search-bar-wrapper">
+        
+        <SearchBar 
+          onSearch={onSearchHandler}
+        />
+      </div>
 
-      {selectedVideo &&
-        <VideoDetail
-          video={selectedVideo}
-        />
-      }
-      
-      {videos.length > 0 ?
-        <VideoList
-          videos={videos}
-          onVideoSelect={videoSelectHandler} 
-        />
-        :
-        // TODO: logic for loading
-        <div>No videos found</div>
-      }
+      <div className="detail-list-wrapper">
+        <div className="detail-wrapper">
+          {selectedVideo &&
+            <VideoDetail
+              video={selectedVideo}
+            />
+          }
+        </div>
+        <div className="list-wrapper">
+          {videos.length > 0 &&
+            <VideoList
+              videos={videos}
+              onVideoSelect={videoSelectHandler} 
+            />
+          }
+        </div>
+      </div>
     </>
   );
 }

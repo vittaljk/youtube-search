@@ -1,0 +1,27 @@
+.list-wrapper {
+    display: grid;
+    grid-row-gap: 5px;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-column-gap: 10px;
+}
+
+img.thumbnail {
+    width: 100%;
+}
+
+.video-item-title {
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 12px;
+}
+
