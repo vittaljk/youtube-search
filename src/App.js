@@ -5,9 +5,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import VideoList from './components/Video/VideoList/VideoList';
 import Axios from 'axios';
 import VideoDetail from './components/Video/VideoDetail/VideoDetail';
-
-// TODO: if possible move this out
-const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet&q=surffing&type=video`;
+import { apiURL } from './utils';
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -16,7 +14,6 @@ function App() {
   const videoSelectHandler = selectedVideo => {
     setSelectedVideo(selectedVideo);
   }
-
   useEffect(() => {
     Axios.get(apiURL)
     .then(({ data, status }) => {
