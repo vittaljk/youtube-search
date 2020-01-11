@@ -1,1 +1,1 @@
-export const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet&q=surffing&type=video`;
+export const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet&type=video&q=`;

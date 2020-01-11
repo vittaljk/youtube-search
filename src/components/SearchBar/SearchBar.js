@@ -1,10 +1,18 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-function SearchBar(props) {
+function SearchBar({ onSearch }) {
+    const handleSearchInputChanges = ({ target: { value }}) => {
+        onSearch(value);
+    }
+
     return (
         <div>
-            SearchBar
+            <input 
+                type="text" 
+                placeholder="Search"
+                onChange={handleSearchInputChanges}
+            />
         </div>
     )
 }

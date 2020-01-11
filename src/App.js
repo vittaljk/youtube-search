@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 // import logo from './logo.svg';
 import './App.css';
@@ -8,14 +9,12 @@ import VideoDetail from './components/Video/VideoDetail/VideoDetail';
 import { apiURL } from './utils';
 
 function App() {
+  const [searchText, setSearchtext] = useState('surffing');
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const videoSelectHandler = selectedVideo => {
-    setSelectedVideo(selectedVideo);
-  }
-  useEffect(() => {
-    Axios.get(apiURL)
+  const searchVideos = (text) => {
+    Axios.get(apiURL + text)
     .then(({ data, status }) => {
       if (status === 200 && data.items.length > 0) {
         setVideos(data.items);
@@ -25,11 +24,26 @@ function App() {
     .catch(e => {
       console.log(e);
     })
+  }
+
+  const videoSelectHandler = selectedVideo => {
+    setSelectedVideo(selectedVideo);
+  }
+
+  const onSearchHandler = value => {
+    setSearchtext(value);
+    searchVideos(value);
+  }
+
+  useEffect(() => {
+    searchVideos(searchText);
   }, []);
 
   return (
     <>
-      <SearchBar />
+      <SearchBar 
+        onSearch={onSearchHandler}
+      />
 
       {selectedVideo &&
         <VideoDetail
