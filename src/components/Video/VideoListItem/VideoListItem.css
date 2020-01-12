@@ -7,6 +7,8 @@
     display: grid;
     grid-template-columns: 120px 1fr;
     grid-column-gap: 10px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 3px;
 }
 
 img.thumbnail {
