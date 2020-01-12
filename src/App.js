@@ -60,10 +60,18 @@ function App() {
     searchVideos(searchText);
   }, []);
 
+  window.onscroll = (() => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop
+      === document.documentElement.offsetHeight
+    ) {
+      loadNextVideos();
+    }
+  });
+
   return (
     // TODO: logic for loading
     <>
-      <div onClick={loadNextVideos}>Next page</div>
       <div className="search-bar-wrapper">
         <div>
           <img className="youtube-logo" src={youtubeLogo} alt="youtube logo"/>{ regionCode && <sup>&nbsp;{regionCode}</sup>}
