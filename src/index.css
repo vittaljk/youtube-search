@@ -11,22 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.detail-list-wrapper {
-  margin: 0 5%;
-  display: grid;
-  grid-template-columns: 7fr 3fr;
-  grid-column-gap: 30px;
-}
-
-.search-bar-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  margin: 0 10%;
-  height: 70px;
-  align-items: center;
-}
-
-.youtube-logo {
-  width: 80px;
-}

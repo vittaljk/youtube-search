@@ -25,3 +25,10 @@ img.thumbnail {
     font-size: 12px;
 }
 
+@media only screen 
+and (min-width: 320px) 
+and (max-width: 480px) {
+    .item {
+        grid-template-columns: 80px calc(100vw - 110px);
+    }
+}

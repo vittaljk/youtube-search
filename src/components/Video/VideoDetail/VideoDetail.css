@@ -1,4 +1,30 @@
 .youtube-embedded-frame {
-    width: 100%;
-    min-height: calc(100vh - 200px);
+  width: 100%;
+  min-height: calc(100vh - 200px);
+}
+
+/* Portrait */
+@media screen 
+  and (max-width: 1024px) 
+  and (orientation: portrait) {
+  .youtube-embedded-frame {
+      min-height: calc(100vh - 700px);
+  }
+}
+
+/* Landscape */
+@media screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
+  and (orientation: landscape) {
+  .youtube-embedded-frame {
+    min-height: calc(100vh - 400px);
+  }
+}
+
+@media screen 
+  and (max-width: 480px) {
+  .youtube-embedded-frame {
+    min-height: calc(100vh - 400px);
+  }
 }
