@@ -70,7 +70,6 @@ function App() {
   });
 
   return (
-    // TODO: logic for loading
     <>
       <div className="search-bar-wrapper">
         <div>
