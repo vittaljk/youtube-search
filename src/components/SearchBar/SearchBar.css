@@ -1,5 +1,19 @@
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
 .search-input {
     height: 25px;
     padding-left: 10px;
     min-width: 500px;
+}
+
+.search-icon-wrapper {
+    margin-top: 5px;
+    margin-left: -30px;
+}
+
+.search-icon {
+    width: 16px;
 }
