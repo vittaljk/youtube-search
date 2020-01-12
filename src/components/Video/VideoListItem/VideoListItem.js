@@ -1,5 +1,4 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import './VideoListItem.css';
 
 function VideoListItem(props) {
@@ -15,10 +14,6 @@ function VideoListItem(props) {
         </div>
     )
 }
-
-// VideoListItem.propTypes = {
-
-// }
 
 export default VideoListItem
 

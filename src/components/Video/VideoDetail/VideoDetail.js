@@ -1,6 +1,6 @@
 import React from 'react';
-// import PropTypes from 'prop-types'
 import './VideoDetail.css';
+
 function VideoDetail({ video }) {
     const url = `https://www.youtube.com/embed/${video.id.videoId}`;
     return (
@@ -15,10 +15,6 @@ function VideoDetail({ video }) {
         </div>
     )
 }
-
-// VideoDetail.propTypes = {
-
-// }
 
 export default VideoDetail
 

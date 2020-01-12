@@ -1,6 +1,5 @@
 import React from 'react'
 import VideoListItem from '../VideoListItem/VideoListItem'
-// import PropTypes from 'prop-types'
 
 function VideoList(props) {
     return (
@@ -15,10 +14,6 @@ function VideoList(props) {
         </>
     )
 }
-
-// VideoList.propTypes = {
-
-// }
 
 export default VideoList
 

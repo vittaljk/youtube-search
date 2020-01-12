@@ -1,7 +1,7 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import './SearchBar.css';
 import searchIcon from '../../assets/search.png';
+import { DebounceInput } from 'react-debounce-input';
 
 function SearchBar({ onSearch }) {
     const handleSearchInputChanges = ({ target: { value }}) => {
@@ -10,20 +10,14 @@ function SearchBar({ onSearch }) {
 
     return (
         <div className="search-container">
-            <input
-                className="search-input" 
-                type="text" 
+            <DebounceInput
                 placeholder="Search"
-                onChange={handleSearchInputChanges}
-            />
+                debounceTimeout={300}
+                onChange={handleSearchInputChanges} />
             <div className="search-icon-wrapper"><img className="search-icon" src={searchIcon} alt="search icon"/></div>
         </div>
     )
 }
-
-// SearchBar.propTypes = {
-
-// }
 
 export default SearchBar
 
