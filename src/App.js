@@ -82,19 +82,15 @@ function App() {
 
       <div className="detail-list-wrapper">
         <div className="detail-wrapper">
-          {selectedVideo &&
-            <VideoDetail
-              video={selectedVideo}
-            />
-          }
+          <VideoDetail
+            video={selectedVideo}
+          />
         </div>
         <div className="list-wrapper">
-          {videos.length > 0 &&
-            <VideoList
-              videos={videos}
-              onVideoSelect={videoSelectHandler} 
-            />
-          }
+          <VideoList
+            videos={videos}
+            onVideoSelect={videoSelectHandler} 
+          />
         </div>
       </div>
     </>
