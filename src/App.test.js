@@ -1,8 +1,8 @@
+import Enzyme, { mount } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './App.js';
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
 const searchText = 'surffing';
@@ -21,6 +21,7 @@ describe('<SearchBar />', () => {
     beforeEach(() => {
         wrapper = mount(<App />);
         wrapper.find('input').simulate('change', { target: { value: searchText } });
+        expect(wrapper.exists()).toBe(true);
     });
 
     it('Should update the value when onChange is called', () => {

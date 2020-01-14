@@ -14,3 +14,28 @@ describe('<VideoList />', () => {
         expect(wrapper.find('.video-list')).toHaveLength(1);
     });
 });
+
+describe('Search results in VideoList component', () => {
+    var wrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<VideoList/>);
+    });
+
+    it('renders search list', () => {
+        wrapper.setProps({videos});
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('returns default empty array when there is no data to map through', () => {
+        wrapper = shallow(<VideoList/>);
+        wrapper.setProps({videos: []});
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it(`doesn't break when videos are empty`, () => {
+        wrapper = shallow(<VideoList/>);
+        wrapper.setProps({videos: []});
+        expect(wrapper.find('.item-wrapper')).toHaveLength(0);
+    });
+});

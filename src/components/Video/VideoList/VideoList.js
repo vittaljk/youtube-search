@@ -6,6 +6,7 @@ function VideoList(props) {
         <div className="video-list">
             {props.videos && props.videos.length > 0 && props.videos.map(video => (
                 <VideoListItem
+                    className="item-wrapper"
                     key={video.etag}
                     video={video}
                     onVideoSelect={props.onVideoSelect} 
