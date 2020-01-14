@@ -5,7 +5,6 @@ import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 const searchText = 'surffing';
-const youtube = require('./api/youtube');
 
 describe('<App /> loading', () => {
     it("renders without crashing", () => {
