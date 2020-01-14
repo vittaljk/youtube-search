@@ -3,15 +3,15 @@ import VideoListItem from '../VideoListItem/VideoListItem'
 
 function VideoList(props) {
     return (
-        <>
-            {props.videos.map(video => (
+        <div className="video-list">
+            {props.videos && props.videos.length > 0 && props.videos.map(video => (
                 <VideoListItem
                     key={video.etag}
                     video={video}
                     onVideoSelect={props.onVideoSelect} 
                 />
             ))}
-        </>
+        </div>
     )
 }
 
