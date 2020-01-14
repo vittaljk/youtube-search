@@ -1,0 +1,8 @@
+.error-container {
+    position: fixed;
+    top: calc(50% - 50px);
+    left: calc(50% - 111px);  
+    background-color: #FFCCBA;
+    padding: 40px;
+    border-radius: 15px;
+}

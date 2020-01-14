@@ -7,6 +7,7 @@ import Axios from 'axios';
 import VideoDetail from './components/Video/VideoDetail/VideoDetail';
 import { apiURL } from './utils';
 import youtubeLogo from './assets/YouTube.png';
+import ErrorMessage from './components/ErrorMessage/ErrorMessage';
 
 function App() {
   const [searchText, setSearchtext] = useState('surffing');
@@ -14,11 +15,13 @@ function App() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [regionCode, setregionCode] = useState(null);
   const [nextPageToken, setnextPageToken] = useState(null);
+  const [searchVideosError, setSearchVideosError] = useState(false);
 
   const searchVideos = (text) => {
     Axios.get(apiURL + text)
     .then(({ data, status }) => {
       if (status === 200 && data.items.length > 0) {
+        setSearchVideosError(false);
         setVideos(data.items);
         setSelectedVideo(data.items[0]);
         setregionCode(data.regionCode);
@@ -27,6 +30,10 @@ function App() {
     })
     .catch(e => {
       console.log(e);
+      setSearchVideosError(true);
+      setVideos([]);
+      setSelectedVideo(null);
+      setnextPageToken(null);
     })
   }
 
@@ -71,6 +78,7 @@ function App() {
 
   return (
     <>
+      <ErrorMessage show={searchVideosError}/>
       <div className="search-bar-wrapper">
         <div>
           <img className="youtube-logo" src={youtubeLogo} alt="youtube logo"/>{ regionCode && <sup>&nbsp;{regionCode}</sup>}
