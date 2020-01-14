@@ -1,5 +1,8 @@
+/* eslint-env jest */
 const youtube = require('../youtube')
 const searchText = 'surffing';
+
+jest.mock('../request')
 
 function checkIfTitleIncludes(title) {
     return title.includes(searchText);
